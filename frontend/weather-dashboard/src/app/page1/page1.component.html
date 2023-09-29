@@ -1,0 +1,57 @@
+
+<!-- New Entry Form -->
+<div>
+  <h2>Add New Entry</h2>
+  <form (submit)="addEntry()">
+    <label for="newCity">City:</label>
+    <input type="text" id="newCity" name="city" [(ngModel)]="newEntry.city" required>
+    <label for="newTemperature">Temperature:</label>
+    <input type="text" id="newTemperature" name="temperature" [(ngModel)]="newEntry.temperature" required>
+    <label for="newHumidity">Humidity:</label>
+    <input type="text" id="newHumidity" name="humidity" [(ngModel)]="newEntry.humidity" required>
+    <button type="submit">Add</button>
+  </form>
+</div>
+
+
+<!-- Edit Entry Form -->
+<div *ngIf="selectedItem">
+  <h2>Edit Entry</h2>
+  <form (submit)="updateEntry()">
+    <label for="editCity">City:</label>
+    <input type="text" id="editCity" [(ngModel)]="selectedItem.city" name="city" required>
+    <label for="editTemperature">Temperature:</label>
+    <input type="text" id="editTemperature" [(ngModel)]="selectedItem.temperature" name="temperature" required>
+    <label for="editHumidity">Humidity:</label>
+    <input type="text" id="editHumidity" [(ngModel)]="selectedItem.humidity" name="humidity" required>
+    <button type="submit">Update</button>
+  </form>
+</div>
+
+
+
+
+<!-- Display Entries -->
+<table>
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Temperature</th>
+      <th>Humidity</th>
+      <th>Recorded At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.city }}</td>
+      <td>{{ item.temperature }}</td>
+      <td>{{ item.humidity }}</td>
+      <td>{{ item.recorded_at }}</td>
+      <td>
+        <button (click)="editItem(item)">Edit</button>
+        <button (click)="deleteItem(item.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

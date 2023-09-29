@@ -1,0 +1,43 @@
+/* src/styles.css or your custom CSS file */
+
+/* Base styles for the navigation bar */
+nav {
+    background-color: #007BFF; /* Set your desired background color */
+    padding: 10px 0; /* Adjust the padding as needed */
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  li {
+    display: inline;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white; /* Set the text color for menu items */
+    font-weight: bold;
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-right: 20px; /* Add space between anchor tags */
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Add underline on hover (optional) */
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    nav {
+      padding: 5px 0; /* Adjust the padding for smaller screens */
+    }
+  
+    li {
+      display: block;
+      margin: 10px 0; /* Adjust the spacing for smaller screens */
+    }
+  }
+  
