@@ -54,4 +54,17 @@ module.exports = {
       }
     });
   },
+
+  searchWeatherData: (req, res) => {
+    const { city } = req.params;
+
+    weatherDataModel.search(city, (err, results) => {
+      if (err) {
+        console.error('Error searching weather data:', err);
+        res.status(500).json({ error: 'Error searching weather data' });
+      } else {
+        res.status(200).json(results);
+      }
+    });
+  },
 };

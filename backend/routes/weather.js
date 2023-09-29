@@ -16,4 +16,6 @@ router.put('/:id', weatherController.updateWeatherData);
 // Delete weather data by ID
 router.delete('/:id', weatherController.deleteWeatherData);
 
+// Search for weather data by city name
+router.get('/:city', weatherController.searchWeatherData);
 module.exports = router;

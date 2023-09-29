@@ -4,7 +4,7 @@ require("dotenv").config()
 
 class WeatherData {
     constructor() {
-      
+
         this.db = mysql.createConnection({
             host: 'up-pl-waw1-mysql-1.db.run-on-erla.com',
             user: 'db-00j8pqpyalmr',
@@ -45,6 +45,15 @@ class WeatherData {
     delete(id, callback) {
         this.db.query('DELETE FROM weather_data WHERE id = ?', id, callback);
     }
+
+    // Search weather data by city name
+    search(city, callback) {
+        const query = 'SELECT * FROM weather_data WHERE city LIKE ?';
+        const searchTerm = `%${city}%`;
+
+        this.db.query(query, [searchTerm], callback);
+    }
+
 
     // Create the weather_data table if it doesn't exist
     createWeatherDataTable() {
