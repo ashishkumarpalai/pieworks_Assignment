@@ -9,19 +9,20 @@ class WeatherData {
         //     password: 'your_password',
         //     database: 'your_database',
         // });
-        this.db = mysql.createConnection({
-            host: '127.0.0.1',
-            user: 'root',
-            password: 'ashish',
-            database: 'weather_data',
-        });
-        // this.db.connect((err) => {
-        //     if (err) {
-        //         console.error('Database connection error:', err);
-        //     } else {
-        //         console.log('Connected to database');
-        //     }
+        // this.db = mysql.createConnection({
+        //     host: '127.0.0.1',
+        //     user: 'root',
+        //     password: 'ashish',
+        //     database: 'weather_data',
         // });
+        this.db = mysql.createConnection({
+            host: 'up-pl-waw1-mysql-1.db.run-on-erla.com',
+            user: 'db-00j8pqpyalmr',
+            password: 'i9WS2o2K7SAjQyLvwMWX8t3d',
+            port: 11550,
+            database: 'db-00j8pqpyalmr',
+        });
+
         this.db.connect((err) => {
             if (err) {
                 console.error('Database connection error:', err);
