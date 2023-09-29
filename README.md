@@ -1,9 +1,9 @@
 # pieworks_Assignment
 
-### Frontend 
+### Frontend(ANGULAR)
 https://pieworks-assignment.vercel.app/page1
 
-### Backend
+### Backend(MYSQL)
 https://pieworks-mysql.onrender.com/
 
 Certainly! Here's a combined project description:
